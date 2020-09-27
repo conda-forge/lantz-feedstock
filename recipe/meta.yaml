@@ -8,7 +8,7 @@ package:
 source:
   # lantz
   - url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
-    sha256: 2992e068908eed64513bff54aac45ec4d96fd53a3fe2f48a0eac09c359ca7f05
+    sha256: bc402b858d3ea245fb56e44b698be477945243de809747f49b99165c48ff0f85
     folder: .
   # lantz-sims
   - url: https://github.com/lantzproject/{{ name }}-sims/archive/v{{ version }}.tar.gz
@@ -33,7 +33,6 @@ build:
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
-    - lantz-monitor = lantz.sims.lantz-monitor:main
     - lantz-qtdemo = lantz.qt.__main__:main
     - lantz-sims = lantz.sims.__main__:main
     - lantz-ino = lantz.ino.__main__:main
@@ -82,7 +81,6 @@ test:
     - lantz-qtdemo --help
     - lantz-sims --help
     - lantz-ino --help
-    - lantz-monitor --help
   requires:
     - pip
     - pyvisa-py
