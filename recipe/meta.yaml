@@ -71,7 +71,7 @@ test:
     - lantz.qt.widgets
     - lantz.sims
     - lantz.drivers
-    - lantz.drivers.aa
+    - lantz.drivers.aa_opto_electronic
     - lantz.ino
     - lantz.ino.templates
   commands:
