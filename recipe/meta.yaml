@@ -87,6 +87,7 @@ test:
     - lantz-qtdemo --help
     - lantz-sims --help
     - lantz-ino --help
+    - lantz sims fungen tcp --help
 
 about:
   home: https://github.com/lantzproject/lantz
