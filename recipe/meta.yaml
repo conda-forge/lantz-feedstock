@@ -55,6 +55,7 @@ requirements:
     - pysignal
     - pyusb
     - pyvisa >=1.10.1
+    - pyvisa-py
     - pyyaml >=5.3.1
     - qtpy
     - serialize
@@ -75,15 +76,11 @@ test:
     - lantz.ino
     - lantz.ino.templates
   commands:
-    - pip check
     - lantz --help
     - lantz-config --help
     - lantz-qtdemo --help
     - lantz-sims --help
     - lantz-ino --help
-  requires:
-    - pip
-    - pyvisa-py
 
 about:
   home: https://github.com/lantzproject/lantz
