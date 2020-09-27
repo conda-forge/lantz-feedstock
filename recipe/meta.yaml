@@ -1,21 +1,45 @@
 {% set name = "lantz" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lantzproject/{{ name }}-core/archive/{{ version }}.tar.gz
-  sha256: 365397bf07042a52477fc5052d72f9476de9dd1e7a75953df9082320de4f0813
+  # lantz
+  - url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
+    sha256: bc402b858d3ea245fb56e44b698be477945243de809747f49b99165c48ff0f85
+    folder: .
+  # lantz-sims
+  - url: https://github.com/lantzproject/{{ name }}-sims/archive/v{{ version }}.tar.gz
+    sha256: 250a0bd4f6ed2481fcc180dd624646ff4860f2a40aa487bad7ad4255d8589a66
+    folder: sims
+  # lantz-drivers
+  - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v{{ version }}.tar.gz
+    sha256: d7e0a3951bdbefcc93bda3b24b1875ae846329ef5386097df4124b78f284b062
+    folder: drivers
+  # lantz-qt
+  - url: https://github.com/lantzproject/{{ name }}-qt/archive/v{{ version }}.tar.gz
+    sha256: 97f2a61d888b4682511b757220575ded3ba61cb2d8e641d6276ba8217c3fa7fa
+    folder: qt
+  # lantz-ino
+  - url: https://github.com/lantzproject/{{ name }}-ino/archive/v{{ version }}.tar.gz
+    sha256: 228e7fb14d55926c9687e68ef2bb8dd75436599fdc40ee1eb5b333bf5d1254ce
+    folder: ino
 
 build:
   noarch: python
   number: 0
   entry_points:
+    - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
+    - lantz-qtdemo = lantz.qt.__main__:main
+    - lantz-sims = lantz.sims.__main__:main
+    - lantz-ino = lantz.ino.__main__:main
   script:
-    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -m pip install . sims/ drivers/ -vv
+    - {{ PYTHON }} -m pip install qt/ -vv
+    - {{ PYTHON }} -m pip install ino/ -vv
 
 requirements:
   host:
@@ -31,6 +55,7 @@ requirements:
     - pysignal
     - pyusb
     - pyvisa >=1.10.1
+    - pyvisa-py
     - pyyaml >=5.3.1
     - qtpy
     - serialize
@@ -40,12 +65,22 @@ requirements:
 test:
   imports:
     - lantz
+    - lantz.core
+    - lantz.qt
+    - lantz.qt.blocks
+    - lantz.qt.utils
+    - lantz.qt.widgets
+    - lantz.sims
+    - lantz.drivers
+    - lantz.drivers.aa_opto_electronic
+    - lantz.ino
+    - lantz.ino.templates
   commands:
-    - pip check
+    - lantz --help
     - lantz-config --help
-  requires:
-    - pip
-    - pyvisa-py
+    - lantz-qtdemo --help
+    - lantz-sims --help
+    - lantz-ino --help
 
 about:
   home: https://github.com/lantzproject/lantz
@@ -66,3 +101,4 @@ about:
 extra:
   recipe-maintainers:
     - mtsolmn
+    - jacobfeder
