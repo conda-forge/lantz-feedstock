@@ -1,13 +1,13 @@
 {% set name = "lantz" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lantzproject/{{ name }}-core/archive/{{ version }}.tar.gz
-  sha256: 365397bf07042a52477fc5052d72f9476de9dd1e7a75953df9082320de4f0813
+  url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
+  sha256: bc402b858d3ea245fb56e44b698be477945243de809747f49b99165c48ff0f85
 
 build:
   noarch: python
@@ -52,7 +52,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Simple yet powerful instrumentation in Python'
+  summary: Simple yet powerful instrumentation in Python
 
   description: |
     lantz is an automation and instrumentation framework with a clean,
