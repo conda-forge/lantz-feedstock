@@ -39,6 +39,7 @@ build:
     - {{ PYTHON }} -m pip install . sims/ drivers/ -vv
     - {{ PYTHON }} -m pip install qt/ -vv
     - {{ PYTHON }} -m pip install ino/ -vv
+  skip: true  # [py<36]
 
 requirements:
   host:
