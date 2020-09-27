@@ -29,13 +29,19 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
     - lantz-qtdemo = lantz.qt.__main__:main
     - lantz-sims = lantz.sims.__main__:main
     - lantz-ino = lantz.ino.__main__:main
+    - 'lantz_subcommands': [
+          'config = lantz.core.__main__:config',
+          'qtdemo = lantz.qt.__main__:main',
+          'sims = lantz.sims.__main__:main',
+          'ino = lantz.ino.__main__:main',
+      ]
   script:
     - {{ PYTHON }} -m pip install . sims/ drivers/ -vv
     - {{ PYTHON }} -m pip install qt/ -vv
