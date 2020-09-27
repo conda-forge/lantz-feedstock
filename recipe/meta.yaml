@@ -43,10 +43,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
   run:
-    - python >=3.6
+    - python
     - colorama >=0.4.3
     - pimpmyclass
     - pint >=0.15
