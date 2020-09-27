@@ -33,6 +33,7 @@ build:
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
+    - lantz-monitor = lantz.sims.lantz-monitor:main
     - lantz-qtdemo = lantz.qt.__main__:main
     - lantz-sims = lantz.sims.__main__:main
     - lantz-ino = lantz.ino.__main__:main
@@ -81,6 +82,7 @@ test:
     - lantz-qtdemo --help
     - lantz-sims --help
     - lantz-ino --help
+    - lantz-monitor --help
   requires:
     - pip
     - pyvisa-py
