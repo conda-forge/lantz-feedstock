@@ -1,5 +1,5 @@
 {% set name = "lantz" %}
-{% set version = "0.6" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,22 +8,22 @@ package:
 source:
   # lantz
   - url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
-    sha256: bc402b858d3ea245fb56e44b698be477945243de809747f49b99165c48ff0f85
+    sha256: c27fb81e3b3f69762b245e1bfcf20075d75b1e98a807496c17dc6d1c5f4cb35c
     folder: .
   # lantz-sims
-  - url: https://github.com/lantzproject/{{ name }}-sims/archive/v{{ version }}.tar.gz
+  - url: https://github.com/lantzproject/{{ name }}-sims/archive/v0.6.tar.gz
     sha256: 250a0bd4f6ed2481fcc180dd624646ff4860f2a40aa487bad7ad4255d8589a66
     folder: sims
   # lantz-drivers
   - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v{{ version }}.tar.gz
-    sha256: d7e0a3951bdbefcc93bda3b24b1875ae846329ef5386097df4124b78f284b062
+    sha256: 7c86416ca698367df755532601a1a1c499c515bf2b550dfecd1fa6d12f6187f0
     folder: drivers
   # lantz-qt
-  - url: https://github.com/lantzproject/{{ name }}-qt/archive/v{{ version }}.tar.gz
+  - url: https://github.com/lantzproject/{{ name }}-qt/archive/v0.6.tar.gz
     sha256: 97f2a61d888b4682511b757220575ded3ba61cb2d8e641d6276ba8217c3fa7fa
     folder: qt
   # lantz-ino
-  - url: https://github.com/lantzproject/{{ name }}-ino/archive/v{{ version }}.tar.gz
+  - url: https://github.com/lantzproject/{{ name }}-ino/archive/v0.6.tar.gz
     sha256: 228e7fb14d55926c9687e68ef2bb8dd75436599fdc40ee1eb5b333bf5d1254ce
     folder: ino
 
@@ -54,7 +54,7 @@ requirements:
     - pyserial
     - pysignal
     - pyusb
-    - pyvisa >=1.10.1
+    - pyvisa >=1.11.3
     - pyvisa-py
     - pyyaml >=5.3.1
     - qtpy
