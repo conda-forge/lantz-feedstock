@@ -5,9 +5,13 @@ Home: https://github.com/lantzproject/lantz
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lantz-feedstock/blob/master/LICENSE.txt)
 
 Summary: Simple yet powerful instrumentation in Python
+
+Development: https://github.com/lantzproject/lantz
+
+Documentation: https://lantz.readthedocs.io/
 
 lantz is an automation and instrumentation framework with a clean,
 well-designed and consistent interface. It provides a core of commonly
