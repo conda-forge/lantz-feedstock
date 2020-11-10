@@ -16,7 +16,7 @@ source:
     folder: sims
   # lantz-drivers
   - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v0.6.2.tar.gz
-    sha256: 7c86416ca698367df755532601a1a1c499c515bf2b550dfecd1fa6d12f6187f0
+    sha256: 9993e4e08e17f6cc51ae1b964e75ba2ea13213dce123ba241854ff73cfcbab88
     folder: drivers
   # lantz-qt
   - url: https://github.com/lantzproject/{{ name }}-qt/archive/v0.6.tar.gz
