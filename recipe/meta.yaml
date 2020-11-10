@@ -15,8 +15,8 @@ source:
     sha256: 250a0bd4f6ed2481fcc180dd624646ff4860f2a40aa487bad7ad4255d8589a66
     folder: sims
   # lantz-drivers
-  - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v{{ version }}.tar.gz
-    sha256: 7c86416ca698367df755532601a1a1c499c515bf2b550dfecd1fa6d12f6187f0
+  - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v0.6.2.tar.gz
+    sha256: 9993e4e08e17f6cc51ae1b964e75ba2ea13213dce123ba241854ff73cfcbab88
     folder: drivers
   # lantz-qt
   - url: https://github.com/lantzproject/{{ name }}-qt/archive/v0.6.tar.gz
@@ -29,7 +29,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
