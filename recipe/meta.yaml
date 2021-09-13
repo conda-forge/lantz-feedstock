@@ -1,5 +1,5 @@
 {% set name = "lantz" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   # lantz
   - url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
-    sha256: c27fb81e3b3f69762b245e1bfcf20075d75b1e98a807496c17dc6d1c5f4cb35c
+    sha256: 64898de1b5b48c8584ccd4342bb5adee8793e6c5f0576df3c7bf5a10f46282bd
     folder: .
   # lantz-sims
   - url: https://github.com/lantzproject/{{ name }}-sims/archive/v0.6.tar.gz
@@ -29,7 +29,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
@@ -87,7 +87,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Simple yet powerful instrumentation in Python'
+  summary: Simple yet powerful instrumentation in Python
 
   description: |
     lantz is an automation and instrumentation framework with a clean,
