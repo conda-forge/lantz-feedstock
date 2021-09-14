@@ -1,5 +1,5 @@
 {% set name = "lantz" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,15 +8,15 @@ package:
 source:
   # lantz
   - url: https://github.com/lantzproject/{{ name }}-core/archive/v{{ version }}.tar.gz
-    sha256: c27fb81e3b3f69762b245e1bfcf20075d75b1e98a807496c17dc6d1c5f4cb35c
+    sha256: 4d667e17b8db9c4ab6703a53e162b64305d914ab3bddf1b2e2afad833a2484b2
     folder: .
   # lantz-sims
   - url: https://github.com/lantzproject/{{ name }}-sims/archive/v0.6.tar.gz
     sha256: 250a0bd4f6ed2481fcc180dd624646ff4860f2a40aa487bad7ad4255d8589a66
     folder: sims
   # lantz-drivers
-  - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v0.6.2.tar.gz
-    sha256: 9993e4e08e17f6cc51ae1b964e75ba2ea13213dce123ba241854ff73cfcbab88
+  - url: https://github.com/lantzproject/{{ name }}-drivers/archive/v{{ version }}.tar.gz
+    sha256: 82c1cc268246721a788f317013b3c90733df142a083525424a485ce73ca40798
     folder: drivers
   # lantz-qt
   - url: https://github.com/lantzproject/{{ name }}-qt/archive/v0.6.tar.gz
@@ -29,7 +29,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
@@ -87,7 +87,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Simple yet powerful instrumentation in Python'
+  summary: Simple yet powerful instrumentation in Python
 
   description: |
     lantz is an automation and instrumentation framework with a clean,
