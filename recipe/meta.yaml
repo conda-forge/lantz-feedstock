@@ -29,7 +29,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - lantz = lantz.__main__:main
     - lantz-config = lantz.core.__main__:config
@@ -43,10 +43,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - colorama >=0.4.3
     - pimpmyclass
     - pint >=0.15
@@ -63,6 +63,8 @@ requirements:
     - stringparser
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lantz
     - lantz.core
